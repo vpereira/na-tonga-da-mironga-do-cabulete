@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Codestream:</strong>
+  <%= @package_file.package.codestream.name %>
+</p>
+
+<p>
+  <strong>Package:</strong>
+  <%= @package_file.package.name %>
+</p>
+
+<p>
+  <strong>Path:</strong>
+  <%= @package_file.path %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <p>
+  <%= raw CodeRay.scan(@package_file.content,
+                       CodeRay::FileType.fetch(@package_file.path, :text)).html(
+    :line_numbers => :table,
+    :css => :style
+  ) %>
+  </p>
+</p>

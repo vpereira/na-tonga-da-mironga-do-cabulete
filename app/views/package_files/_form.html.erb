@@ -1,0 +1,6 @@
+<%= simple_form_for(package_file) do |f| %>
+  <%= f.input :path %>
+  <%= f.input :content as: :text %>
+  <%= f.association :package %>
+  <%= f.submit %>
+<% end %>

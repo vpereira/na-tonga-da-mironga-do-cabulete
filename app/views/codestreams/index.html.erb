@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Codestreams</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @codestreams.each do |codestream| %>
+      <tr>
+        <td><%= codestream.name %></td>
+        <td><%= link_to 'Show', codestream %></td>
+        <td><%= link_to 'Edit', edit_codestream_path(codestream) %></td>
+        <td><%= link_to 'Destroy', codestream, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Codestream', new_codestream_path %>
