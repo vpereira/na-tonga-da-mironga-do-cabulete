@@ -18,10 +18,6 @@
 <p>
   <strong>Content:</strong>
   <p>
-  <%= raw CodeRay.scan(@package_file.content,
-                       CodeRay::FileType.fetch(@package_file.path, :text)).html(
-    :line_numbers => :table,
-    :css => :style
-  ) %>
+  <%=  raw print_source_code(@package_file.content,CodeRay::FileType.fetch(@package_file.path, :text)) %>
   </p>
 </p>

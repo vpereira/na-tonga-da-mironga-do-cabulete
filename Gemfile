@@ -10,6 +10,7 @@ end
 gem 'rails', '~> 5.0.1'
 gem 'pg'
 gem 'therubyracer'
+gem 'RedCloth'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -31,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'simple_form'
 gem 'bootstrap', '~> 4.0.0alpha5'
 gem 'coderay'
+gem 'redclothcoderay'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
