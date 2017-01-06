@@ -18,6 +18,8 @@
 <p>
   <strong>Content:</strong>
   <p>
-  <%=  raw print_source_code(@package_file.content,CodeRay::FileType.fetch(@package_file.path, :text)) %>
+  <%= print_source_code(@package_file.content,
+                        CodeRay::FileType.fetch(@package_file.path, :text)
+                       ).html_safe %>
   </p>
 </p>

@@ -1,0 +1,6 @@
+<h1> Search results: </h1>
+<ul>
+<% @package_files.each do |pkg_file| %>
+  <li><%= pkg_file.path %></li>
+<% end %>
+</ul>

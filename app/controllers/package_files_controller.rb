@@ -61,6 +61,12 @@ class PackageFilesController < ApplicationController
     end
   end
 
+  def search
+    if params[:search]
+      @package_files = PackageFile.search_by_content(params[:search])
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_package_file
