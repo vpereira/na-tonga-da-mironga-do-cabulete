@@ -63,7 +63,7 @@ class PackageFilesController < ApplicationController
 
   def search
     if params[:search]
-      @package_files = PackageFile.search_by_content(params[:search])
+      @package_files = PackageFile.search_by_content(params[:search]).with_pg_search_highlight
     end
   end
 

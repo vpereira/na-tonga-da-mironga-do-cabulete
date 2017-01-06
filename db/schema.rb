@@ -10,26 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170106101215) do
+ActiveRecord::Schema.define(version: 20170106160958) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "pg_trgm"
 
   create_table "codestreams", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "package_files", force: :cascade do |t|
-    t.string   "path",       null: false
+    t.string   "path",        null: false
     t.text     "content"
     t.text     "index"
     t.integer  "package_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.tsvector "tsv_content"
     t.index ["package_id"], name: "index_package_files_on_package_id", using: :btree
+    t.index ["tsv_content"], name: "index_content_tsv_content", using: :gin
   end
 
   create_table "packages", force: :cascade do |t|
