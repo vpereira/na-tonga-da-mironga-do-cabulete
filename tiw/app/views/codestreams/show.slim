@@ -1,0 +1,8 @@
+#content
+  h1 = @codestream.name
+  h2 Packages:
+  p
+    ul
+      - @codestream.packages.each do |package|
+        li
+          a href=url("/codestreams/#{@codestream.name}/packages/#{package.name}") = package.name

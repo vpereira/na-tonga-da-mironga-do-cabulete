@@ -1,0 +1,7 @@
+#content
+  h1 = "#{@codestream.name} > #{@package.name}"
+  h2 = @package_file.path
+
+= CodeRay.scan(@package_file.content, \
+             CodeRay::FileType.fetch(@package_file.path, :text) \
+            ).div(:line_numbers => :table)

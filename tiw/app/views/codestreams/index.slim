@@ -1,0 +1,5 @@
+#content
+  ul
+    - @codestreams.each do |codestream|
+      li
+        a href=url("/codestreams/#{codestream.name}") = codestream.name 

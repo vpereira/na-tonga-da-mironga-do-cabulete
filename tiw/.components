@@ -1,0 +1,9 @@
+---
+:orm: activerecord
+:test: minitest
+:mock: none
+:script: jquery
+:renderer: slim
+:stylesheet: scss
+:namespace: Tiw
+:migration_format: timestamp

@@ -1,0 +1,8 @@
+#content
+  h1 = "#{@codestream.name} > #{@package.name}"
+  h2 Files:
+  p
+    ul
+      - @package.package_files.each do |package_file|
+        li
+          a href=url("/codestreams/#{@codestream.name}/packages/#{@package.name}/package_files/package_file?path=#{package_file.path}") = package_file.path

@@ -1,1 +1,0 @@
-json.array! @package_files, partial: 'package_files/package_file', as: :package_file

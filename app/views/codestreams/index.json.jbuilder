@@ -1,1 +1,0 @@
-json.array! @codestreams, partial: 'codestreams/codestream', as: :codestream

@@ -1,1 +1,0 @@
-json.partial! "package_files/package_file", package_file: @package_file
