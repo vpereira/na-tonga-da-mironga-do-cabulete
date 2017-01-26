@@ -9,5 +9,8 @@
     h2 Results:
     - @package_files.each do |package_file|
       li
-
+         p
+           = CodeRay.scan(package_file.pg_search_highlight, \
+                      CodeRay::FileType.fetch(package_file.path, :text) \
+                     ).div(:line_numbers => :table)
          a href=url("/codestreams/#{package_file.package.codestream.name}/packages/#{package_file.package.name}/package_files/package_file?path=#{package_file.path}") = package_file.path

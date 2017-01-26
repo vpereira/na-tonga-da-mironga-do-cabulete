@@ -9,7 +9,7 @@ Tiw::App.controllers do
 
     if params["q"]
       puts params["q"]
-      @package_files = PackageFile.search_by_content(params["q"]) # .with_pg_search_highlight
+      @package_files = PackageFile.search_by_content(params["q"]).with_pg_search_highlight
     end
     slim :'codestreams/search'
   end

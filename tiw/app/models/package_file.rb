@@ -1,7 +1,15 @@
 class PackageFile < ActiveRecord::Base
   belongs_to :package
   include PgSearch
-  pg_search_scope :search_by_content, against: :content
+  pg_search_scope :search_by_content, against: :content,
+    using: {
+      tsearch: {
+        highlight: {
+           start_sel: '_',
+           stop_sel: '_'
+        }
+      }
+    }
   # TODO
   # a lot of options to tweak here
   # https://github.com/Casecommons/pg_search
