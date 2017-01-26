@@ -6,7 +6,7 @@ module Tiw
     register Padrino::Helpers
     enable :sessions
     Slim::Engine.options[:disable_escape] = true
-    
+
     ##
     # Caching support.
     #

@@ -5,4 +5,4 @@
     ul
       - @package.package_files.each do |package_file|
         li
-          a href=url("/codestreams/#{@codestream.name}/packages/#{@package.name}/package_files/package_file?path=#{package_file.path}") = package_file.path
+          a href=build_file_path(package_file) = package_file.path

@@ -1,0 +1,12 @@
+html
+  head
+    title
+      | Example
+    = stylesheet_link_tag    "application", media: "all"
+    = stylesheet_link_tag    "coderay", media: "all"
+    = javascript_include_tag "application"
+  body
+    #container
+      - flash.each do |name, msg|
+        = content_tag :div, msg, id: "flash_#{name}"
+      = yield
