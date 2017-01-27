@@ -12,6 +12,8 @@ services:
       dockerfile: Dockerfile.frontend
       args:
         tiw: "./tiw/"
+    volumes:
+      - /sources:/sources
     entrypoint:
       - /entrypoint.sh 
     # volumes:
