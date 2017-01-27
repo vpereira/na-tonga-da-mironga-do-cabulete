@@ -1,0 +1,22 @@
+version: '2'
+services:
+  db:
+    environment:
+      POSTGRES_PASSWORD: postgres
+    image: postgres
+    ports:
+      - "5432:5432"
+  web:
+    build: 
+      context: .
+      dockerfile: Dockerfile.frontend
+      args:
+        tiw: "./tiw/"
+    entrypoint:
+      - /entrypoint.sh 
+    # volumes:
+    #  - .:/tiw
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db

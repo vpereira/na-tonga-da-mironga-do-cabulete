@@ -18,7 +18,8 @@ ActiveRecord::Base.configurations[:development] = {
   :database  => 'db_development',
   :username  => 'postgres',
   :password  => 'postgres',
-  :host      => 'localhost',
+  # :host      => 'localhost',
+  :host      => 'db',
   :port      => 5432
 
 }
@@ -28,7 +29,8 @@ ActiveRecord::Base.configurations[:production] = {
   :database  => 'db_production',
   :username  => 'postgres',
   :password  => 'postgres',
-  :host      => 'localhost',
+  # :host      => 'localhost',
+  :host      => 'db',
   :port      => 5432
 
 }
@@ -38,7 +40,8 @@ ActiveRecord::Base.configurations[:test] = {
   :database  => 'db_test',
   :username  => 'postgres',
   :password  => 'postgres',
-  :host      => 'localhost',
+  # :host      => 'localhost',
+  :host      => 'db',
   :port      => 5432
 
 }

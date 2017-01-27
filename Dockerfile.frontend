@@ -1,0 +1,9 @@
+FROM opensuse:42.2
+ARG tiw
+RUN zypper ref  && zypper up -y && zypper in -y -t pattern  devel_basis && zypper in -y postgresql93-devel  ruby2.2  ruby2.2-devel  
+RUN gem.ruby2.2 install bundler padrino
+COPY $tiw /tiw/
+COPY entrypoint.sh /
+RUN cd /tiw && bundler.ruby2.2 install --binstubs # && rake.ruby2.2 ar:create && rake.ruby2.2 ar:migrate
+WORKDIR /tiw
+EXPOSE 3000
