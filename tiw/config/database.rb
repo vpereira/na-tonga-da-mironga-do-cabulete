@@ -18,8 +18,8 @@ ActiveRecord::Base.configurations[:development] = {
   :database  => 'db_development',
   :username  => 'postgres',
   :password  => 'postgres',
-  # :host      => 'localhost',
-  :host      => 'db',
+  :host      => 'localhost',
+  # :host      => 'db',
   :port      => 5432
 
 }

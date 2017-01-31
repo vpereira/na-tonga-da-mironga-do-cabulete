@@ -1,5 +1,9 @@
 #content
+  = partial 'search/search_box'
+  
+  h1 Available codestreams:
+
   ul
     - @codestreams.each do |codestream|
       li
-        a href=url("/codestreams/#{codestream.name}") = codestream.name 
+        a href=url("/codestreams/#{codestream.name}") = codestream.name

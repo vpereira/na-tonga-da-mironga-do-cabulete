@@ -1,9 +1,5 @@
 #content
-  h1 Search:
-  div
-    = form_tag '/search', method: 'get' do
-      = text_field_tag :q, size:"60"
-      = submit_tag "Search"
+  = partial 'search/search_box'
 
   - if @package_files
     h2 Results:
