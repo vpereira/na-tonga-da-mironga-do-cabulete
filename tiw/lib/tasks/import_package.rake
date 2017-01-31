@@ -7,7 +7,12 @@ namespace :package do
     package = Package.new codestream: codestream, name: args[:package]
     Dir.glob(File.join(args[:package_path],"**","*")) do |f|
       if PackageUtils.is_text?(f)
-        package.package_files << PackageFile.new(path: f, content: PackageUtils.force_unicode(File.read(f)))
+        begin
+          package.package_files << PackageFile.new(path: f, content: PackageUtils.force_unicode(File.read(f)))
+          package.save
+        rescue => ex
+          puts "#{f} had exception #{ex.message}"
+        end
       end
     end
     package.save
